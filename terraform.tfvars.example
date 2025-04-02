@@ -1,0 +1,24 @@
+# AWS Configuration
+aws_region  = "ap-northeast-1"  # Default region
+aws_profile = "default"      # AWS CLI profile to use
+
+# Resource Naming
+resource_prefix = "tf-securityhub-elasticagent"     # Prefix for all resources created
+
+# EC2 Configuration
+ec2_instance_type = "t3.medium"
+ec2_ami           = "ami-0599b6e53ca798bb2"  # Amazon Linux 2 in ap-northeast-1
+
+# Security Hub Configuration
+# List of additional controls to disable beyond the defaults
+disabled_security_controls = [
+  # "IAM.2",  # Uncomment to disable IAM users should not have IAM policies attached
+  # "IAM.3",  # Uncomment to disable IAM users' access keys should be rotated
+  # "EC2.1",  # Uncomment to disable EBS snapshots should not be public
+]
+
+# GuardDuty Integration
+enable_guardduty_integration = false  # Set to true to enable GuardDuty integration
+
+# Tags
+default_tags = {}
